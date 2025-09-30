@@ -11,112 +11,10 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-// // Locations data - organized by state
-// const webLocations = [
-//   // Arizona
-//   {
-//     city: "Buckeye",
-//     state: "AZ",
-//     website: "https://www.RestRecoveryBuckeye.com"
-//   }, {
-//     city: "Chandler",
-//     state: "AZ",
-//     website: "https://www.RestRecoveryChandler.com"
-//   }, {
-//     city: "Gilbert",
-//     state: "AZ",
-//     website: "https://www.RestRecoveryGilbert.com"
-//   }, {
-//     city: "North Phoenix",
-//     state: "AZ",
-//     website: "https://www.RestRecoveryNorthPhoenix.com"
-//   },
-//   // California
-//   {
-//     city: "Oceanside",
-//     state: "CA",
-//     website: "https://www.RestRecoverySandiego.com"
-//   }, {
-//     city: "Roseville",
-//     state: "CA",
-//     website: "https://www.RestRecoveryRoseville.com"
-//   },
-//   // Colorado
-//   {
-//     city: "Denver",
-//     state: "CO",
-//     website: "https://www.RestRecoveryDenver.com"
-//   }, {
-//     city: "Superior",
-//     state: "CO",
-//     website: "https://www.restrecoverysuperior.com"
-//   },
-//   // Florida
-//   {
-//     city: "Fort Walton",
-//     state: "FL",
-//     website: "https://www.RestRecoveryFortWalton.com"
-//   },
-//   // Idaho
-//   {
-//     city: "Meridian",
-//     state: "ID",
-//     website: "https://www.RestRecoveryMeridian.com"
-//   },
-//   // Massachusetts
-//   {
-//     city: "Groton",
-//     state: "MA",
-//     website: "https://www.RestRecoveryGroton.com"
-//   },
-//   // Mississippi
-//   {
-//     city: "Gluckstadt",
-//     state: "MS",
-//     website: "https://www.RestRecoveryGluckstadt.com"
-//   }, {
-//     city: "Jackson",
-//     state: "MS",
-//     website: "https://www.RestRecoveryJackson.com"
-//   },
-//   // New Jersey
-//   {
-//     city: "Wayne",
-//     state: "NJ",
-//     website: "https://www.restrecovrywayne.com"
-//   },
-//   // Oregon
-//   {
-//     city: "Portland",
-//     state: "OR",
-//     website: "https://www.RestRecoveryPortland.com"
-//   },
-//   // Texas
-//   {
-//     city: "San Antonio",
-//     state: "TX",
-//     website: "https://www.RestRecoverySanAntonio.com"
-//   },
-//   // Utah
-//   {
-//     city: "Bountiful",
-//     state: "UT",
-//     website: "https://www.RestRecoveryBountiful.com"
-//   }, {
-//     city: "Ephraim",
-//     state: "UT",
-//     website: "https://www.RestRecoveryEphraim.com"
-//   },
-//   // Virginia
-//   {
-//     city: "Ashburn",
-//     state: "VA",
-//     website: "https://www.restrecoveryvirginia.com"
-//   }
-// ];
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [active, setActive] =
+    useState<'home' | 'vision' | 'platform' | 'news' | 'involve'>('home');
 
   const scrollToSection = (sectionId: string) => {
     try {
@@ -153,70 +51,80 @@ const Navbar = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              `font-semibold transition-colors relative
-            ${isActive
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('home');
+              setActive('home');
+            }}
+            className={`font-semibold transition-colors relative
+              ${active === 'home'
                 ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
-                : 'text-white/80 hover:text-white'}`
-            }
+                : 'text-white/80 hover:text-white'}`}
           >
             Home
-          </NavLink>
+          </a>
 
-          <NavLink
-          to="/licensee"
-          end
-            className={({ isActive }) =>
-              `font-medium transition-colors relative
-            ${isActive
+          <a
+            href="#vision"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('vision');
+              setActive('vision');
+            }}
+            className={`font-semibold transition-colors relative
+              ${active === 'vision'
                 ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
-                : 'text-white/80 hover:text-white'}`
-            }
+                : 'text-white/80 hover:text-white'}`}
           >
             Vision
-          </NavLink>
+          </a>
 
-          <NavLink
-            to="/shop"
-            end
-            className={({ isActive }) =>
-              `font-medium transition-colors relative
-            ${isActive
+          <a
+            href="#platform"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('platform');
+              setActive('platform');
+            }}
+            className={`font-semibold transition-colors relative
+              ${active === 'platform'
                 ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
-                : 'text-white/80 hover:text-white'}`
-            }
+                : 'text-white/80 hover:text-white'}`}
           >
             Platform
-          </NavLink>
+          </a>
 
-          <NavLink
-            to="/news"
-            end
-            className={({ isActive }) =>
-              `font-medium transition-colors relative
-            ${isActive
+          <a
+            href="#news"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('news');
+              setActive('news');
+            }}
+            className={`font-semibold transition-colors relative
+              ${active === 'news'
                 ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
-                : 'text-white/80 hover:text-white'}`
-            }
+                : 'text-white/80 hover:text-white'}`}
           >
             News
-          </NavLink>
+          </a>
           
-          <NavLink
-            to="/involve"
-            end
-            className={({ isActive }) =>
-              `font-medium transition-colors relative
-            ${isActive
+          <a
+            href="#involve"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('involve');
+              setActive('involve');
+            }}
+            className={`font-semibold transition-colors relative
+              ${active === 'involve'
                 ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
-                : 'text-white/80 hover:text-white'}`
-            }
+                : 'text-white/80 hover:text-white'}`}
           >
             Involve
-          </NavLink>
+          </a>
         </nav>
 
         {/* Desktop Button */}
