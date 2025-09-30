@@ -23,7 +23,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse" />
@@ -39,38 +39,53 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className={`space-y-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-yellow-400/10 rounded-full border border-yellow-500/30 backdrop-blur-sm">
+            {/* <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-yellow-400/10 rounded-full border border-yellow-500/30 backdrop-blur-sm">
               <Star className="w-4 h-4 text-yellow-400 mr-2" />
               <span className="text-sm font-medium text-white">America's Premier Recovery Network</span>
-            </div>
+            </div> */}
 
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
-                Transform Your
-                <span className="block bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
-                  Wellness Journey
+                Super Naari
+                <span className="block mt-1 text-xl md:text-5xl lg:text-6xl font-semibold leading-snug bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
+                  A Period Equity Initiative
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-white/80 max-w-2xl leading-relaxed">
-                Join the REST RECOVERY revolution. Premium wellness centers offering cutting-edge recovery technology and profitable licensee opportunities.
+                “Building a digital ecosystem for menstrual health, bridging ancient wisdom with modern healthcare”
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 text-black font-semibold px-8 py-4 text-lg hover-scale group"
-                onClick={() => scrollToSection('contact')}
+              {/* Primary */}
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300
+               text-black font-semibold px-8 py-4 text-lg group"
+               onClick={() => scrollToSection('vision')}
+               >
+                Explore Platform
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              
+              {/* Secondary */}
+              <Button
+              size="lg"
+              variant="ghost"
+              onClick={() => scrollToSection('intro')}
+              className="px-8 py-4 text-lg rounded-xl
+               text-yellow-400 border border-yellow-400/70
+               hover:bg-yellow-400/10 hover:text-yellow-300"
               >
-                Start Your Journey
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Watch Introduction
+                <Play className="ml-2 w-5 h-5" />
               </Button>
             </div>
 
             {/* Social Proof Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
+            {/* <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
               <div className="text-center">
                 <div className="text-3xl font-bold text-yellow-400">20+</div>
                 <div className="text-sm text-white/70">Locations</div>
@@ -83,7 +98,7 @@ const HeroSection = () => {
                 <div className="text-3xl font-bold text-yellow-400">98%</div>
                 <div className="text-sm text-white/70">Success Rate</div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Content - Logo & Features */}
@@ -93,15 +108,15 @@ const HeroSection = () => {
               <div className="absolute -inset-8 bg-gradient-to-r from-yellow-500/20 to-white/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700" />
               <div className="relative rounded-3xl overflow-hidden border border-white/20 backdrop-blur-sm bg-white/5 p-8 hover-scale">
                 <img 
-                  alt="REST RECOVERY - Premier Wellness & Recovery Centers" 
+                  alt="girls" 
                   className="w-full h-auto object-contain transform group-hover:scale-105 transition-transform duration-700" 
-                  src="/lovable-uploads/b75b628b-2cba-4748-8f80-792a5ae8ee1d.png" 
+                  src="/lovable-uploads/girls.png" 
                 />
               </div>
             </div>
 
             {/* Quick Features */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-yellow-500/30 transition-colors hover-scale">
                 <MapPin className="w-6 h-6 text-yellow-400 mb-2" />
                 <div className="text-sm font-medium text-white">20+ Locations</div>
@@ -122,7 +137,7 @@ const HeroSection = () => {
                 <div className="text-sm font-medium text-white">5-Star Rated</div>
                 <div className="text-xs text-white/70">Customer Satisfaction</div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

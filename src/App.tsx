@@ -5,8 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Shop from "./pages/Shop";
-import Licensee from "./pages/Licensee";
+// import Shop from "./pages/Shop";
+// import Licensee from "./pages/Licensee";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -23,10 +23,11 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/licensee" element={<Licensee />} />
+          {/* <Route path="/shop" element={<Shop />} /> */}
+          {/* <Route path="/licensee" element={<Licensee />} /> */}
           <Route path="/redirect" element={<Redirect />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const NewArrivalsSection = () => {
   return (
-    <section className="py-12 md:py-20 lg:py-24 bg-gradient-to-b from-black to-zinc-900">
+    <section id="news" className="py-12 md:py-20 lg:py-24 bg-gradient-to-b from-black to-zinc-900">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto mb-20">
           <span className="inline-block px-4 py-2 bg-white/10 text-white rounded-full font-medium mb-6">
