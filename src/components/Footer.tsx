@@ -7,12 +7,11 @@ const Footer = () => {
   return (
     <footer className="bg-black border-t border-white/10">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-20 lg:gap-x-28">
           <div>
-            <h3 className="text-xl font-bold mb-6 text-white tracking-tight">REST RECOVERY</h3>
+            <h2 className="text-xl font-bold mb-6 text-white tracking-tight">Super Naari</h2>
             <p className="text-white/70 mb-6">
-              Leading the recovery revolution with cutting-edge technology and proven methodologies.
-              Join our community of wellness enthusiasts and recovery professionals.
+              Connect With us on
             </p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/restrecoverywellness/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
@@ -33,7 +32,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-6 text-white tracking-tight">Quick Links</h3>
             <ul className="space-y-3">
               <li><a href="#" className="text-white/70 hover:text-white transition-opacity">About Us</a></li>
@@ -43,9 +42,9 @@ const Footer = () => {
               <li><a href="#" className="text-white/70 hover:text-white transition-opacity">Contact</a></li>
               <li><a href="#" className="text-white/70 hover:text-white transition-opacity">Press</a></li>
             </ul>
-          </div>
+          </div> */}
           
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-6 text-white tracking-tight">Legal</h3>
             <ul className="space-y-3">
               <li><a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-opacity">Privacy Policy</a></li>
@@ -54,14 +53,21 @@ const Footer = () => {
               <li><a href="/accessibility" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-opacity">Accessibility</a></li>
               <li><a href="/cookie-policy" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-opacity">Cookie Policy</a></li>
             </ul>
-          </div>
+          </div> */}
           
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-white tracking-tight">Subscribe</h3>
-            <p className="text-white/70 mb-4">
-              Get the latest news and special offers.
-            </p>
-            <form className="flex flex-col space-y-4">
+          <div className="w-full max-w-[420px] mx-auto">
+            <h3 className="text-xl font-bold mb-6 text-white tracking-tight">Subscribe for our newsletter.</h3>
+            <form className="flex flex-col space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <Input
+                type="email"
+                placeholder="First Name"
+                className="bg-white/5 border-white/10 placeholder:text-white/50 text-white"
+              />
+              <Input
+                type="email"
+                placeholder="Last Name"
+                className="bg-white/5 border-white/10 placeholder:text-white/50 text-white"
+              />
               <Input
                 type="email"
                 placeholder="Your email"
@@ -76,7 +82,7 @@ const Footer = () => {
         
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-white/70">
-            &copy; {new Date().getFullYear()} REST RECOVERY Wellness. All rights reserved.
+            &copy; {new Date().getFullYear()} Saroni Roy Foundation. All rights reserved.
           </p>
         </div>
       </div>
