@@ -1,111 +1,88 @@
-import { ArrowRight, Award, Users, Globe, Star } from "lucide-react";
+import { ArrowRight, ShoppingBag, MapPin, Users, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const StorySection = () => {
   return (
-    <section id="platform" className="py-12 md:py-20 lg:py-24 bg-gradient-to-b from-black via-zinc-900 to-black relative overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/50 to-transparent" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Story Content */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <span className="inline-block px-4 py-2 bg-white/10 text-white rounded-full font-medium">
-                Our Story
-              </span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-                Pioneering the Future of
-                <span className="block bg-gradient-to-r from-white to-zinc-300 bg-clip-text text-transparent">
-                  Recovery Wellness
-                </span>
+    <section id="platform" className="py-12 md:py-20 lg:py-24 bg-gradient-to-b from-zinc-900 to-black relative overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/3 rounded-full blur-3xl" />
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center max-w-4xl mx-auto mb-20">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight leading-tight">
+                INNOVATIVE  DIGITAL  PLATFORM
               </h2>
-              <p className="text-xl text-white/80 leading-relaxed">
-                At Rest Recovery, we believe that true wellness begins with intentional restoration. 
-                Our boutique wellness facilities are designed to help you recover, heal, and optimize 
-                your body and mind using science-backed, high-performance therapies.
+              {/* Main Paragraph */}
+              <p className="text-xl text-white/70 leading-relaxed">
+                An inclusive, accessible, and holistic digital ecosystem platform-a one-stop solution to democratize menstrual and reproductive health.
               </p>
             </div>
-
-            <div className="space-y-6">
-              <p className="text-lg text-white/70 leading-relaxed">
-                We combine the latest in recovery technology—like cold plunges, infrared saunas, 
-                hyperbaric chambers, float therapy, red light therapy, compression, PEMF, and salt 
-                rooms—into a seamless, rejuvenating experience.
-              </p>
-              <p className="text-lg text-white/70 leading-relaxed">
-                Founded on the idea that recovery should be accessible, effective, and luxurious, 
-                each of our locations is built with care, outfitted with industry-leading equipment, 
-                and supported by knowledgeable staff who guide you through your wellness journey.
-              </p>
-              <blockquote className="text-xl font-medium text-white italic border-l-4 border-white/20 pl-6">
-                "Welcome to the future of feeling good."
-              </blockquote>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <stat.icon className="w-6 h-6 text-white" />
+    
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+              {/* Holistic Section */}
+              <div className="group h-full bg-gradient-to-br from-zinc-900/80 to-black/80 border border-white/10 rounded-3xl p-10 backdrop-blur-md hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="flex items-center mb-8">
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">HOLISTIC CARE</h3>
                   </div>
-                  <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-sm text-white/60">{stat.label}</div>
                 </div>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/licensee">
-                <Button className="bg-white text-black hover:bg-white/90 px-8 py-4 rounded-full text-lg flex items-center gap-3 w-full sm:w-auto">
-                  Explore Licensee Opportunities
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </Link>
-            </div>
+    
+                <div className="space-y-6 mb-10">
+                  <p className="text-xl text-white/80 leading-relaxed">
+                    Curate library of educational resources blending modern medical science with ancient practices like Ayurveda, Unani, Chinese Medicine, Indigenous knowledge & wisdom
+                  </p>
+                </div>
+              </div>
+    
+              {/* Accessibility Section */}
+              <div className="group h-full bg-gradient-to-br from-zinc-900/80 to-black/80 border border-white/10 rounded-3xl p-10 backdrop-blur-md hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="flex items-center mb-8">
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">ACCESSIBILITY</h3>
+                  </div>
+                </div>
+    
+                <div className="space-y-6 mb-10">
+                  <p className="text-xl text-white/80 leading-relaxed">
+                    Ensure multilingual support, intuitive navigation, and universal design for individuals with disabilities and those in marginalized communities.
+                  </p>
+                </div>
+              </div>
+    
+              {/* expert Section */}
+              <div className="group h-full bg-gradient-to-br from-zinc-900/80 to-black/80 border border-white/10 rounded-3xl p-10 backdrop-blur-md hover:border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="flex items-center mb-8">
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">EXPERT ONSULTATION</h3>
+                  </div>
+                </div>
+    
+                <div className="space-y-6 mb-10">
+                  <p className="text-xl text-white/80 leading-relaxed">
+                    Facilitate one-to-one virtual consultations with healthcare professionals and traditional healers
+                  </p>
+                </div>
           </div>
+        </div>
 
-          {/* Image */}
-          <div className="relative">
-            <div className="absolute -inset-8 bg-gradient-to-r from-white/5 to-white/10 rounded-3xl blur-2xl" />
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-              <img 
-                alt="REST RECOVERY Wellness Center" 
-                className="w-full h-auto transform hover:scale-105 transition-transform duration-700" 
-                src="/lovable-uploads/b75b628b-2cba-4748-8f80-792a5ae8ee1d.png" 
-              />
-            </div>
-          </div>
+        {/* Yellow Highlight */}
+        <div className="mt-12 mx-auto max-w-3xl text-center">
+          {/* up line */}
+          <p className="text-xl md:text-3xl font-bold leading-tight text-white">
+            Addressing the pain-points of menstruation:
+          </p>
+          {/* down line */}
+          <p className="mt-1 text-xl md:text-3xl font-semibold leading-tight text-yellow-400">
+            Cost, Pain, Stigma, Accessibility
+          </p>
         </div>
       </div>
     </section>
   );
 };
-
-const stats = [
-  {
-    icon: Globe,
-    number: "20+",
-    label: "Locations"
-  },
-  {
-    icon: Users,
-    number: "10K+",
-    label: "Members"
-  },
-  {
-    icon: Award,
-    number: "98%",
-    label: "Satisfaction"
-  },
-  {
-    icon: Star,
-    number: "5.0",
-    label: "Rating"
-  }
-];
 
 export default StorySection;

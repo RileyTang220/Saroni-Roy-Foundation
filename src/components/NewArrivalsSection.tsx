@@ -1,41 +1,72 @@
 import { ArrowRight, Snowflake, Thermometer, Bath, Cylinder } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
 
 const NewArrivalsSection = () => {
+  const scrollerRef = React.useRef<HTMLDivElement | null>(null);
+
+  const scrollByViewport = (dir: "left" | "right") => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const amount = dir === "right" ? el.clientWidth : -el.clientWidth;
+    el.scrollBy({ left: amount, behavior: "smooth" });
+  };
+
   return (
     <section id="news" className="py-12 md:py-20 lg:py-24 bg-gradient-to-b from-black to-zinc-900">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <span className="inline-block px-4 py-2 bg-white/10 text-white rounded-full font-medium mb-6">
-            New Arrivals
-          </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight leading-tight">
-            Latest Recovery
-            <span className="block bg-gradient-to-r from-white to-zinc-300 bg-clip-text text-transparent">
-              Innovations
-            </span>
+            News
           </h2>
-          <p className="text-xl text-white/70 leading-relaxed">
-            Discover our newest professional-grade recovery equipment designed for 
-            elite performance and unparalleled wellness experiences.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Sliding container */}
+        <div className="relative mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {newArrivals.map((product, index) => (
             <ProductCard key={index} product={product} index={index} />
           ))}
+          </div>
+
+          {/* Left Arrow */}
+          <Button
+            aria-label="Previous"
+            onClick={() => scrollByViewport("left")}
+            className="hidden md:flex items-center justify-center
+                       absolute left-0 top-1/2 -translate-y-1/2 z-20
+                       h-12 w-12 rounded-full bg-white/10 hover:bg-white/20
+                       border border-white/20 backdrop-blur text-white shadow transition"
+            variant="ghost"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+
+          {/* Right Arrow */}
+          <Button
+            aria-label="Next"
+            onClick={() => scrollByViewport("right")}
+            className="hidden md:flex items-center justify-center
+                       absolute right-0 top-1/2 -translate-y-1/2 z-20
+                       h-12 w-12 rounded-full bg-white/10 hover:bg-white/20
+                       border border-white/20 backdrop-blur text-white shadow transition"
+            variant="ghost"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
         </div>
 
-        <div className="text-center">
+        
+        {/* <div className="text-center">
           <Link to="/shop">
             <Button className="bg-white text-black hover:bg-white/90 px-12 py-6 rounded-full text-xl font-semibold flex items-center gap-4 mx-auto">
-              Explore All Products
+              Explore All News
               <ArrowRight className="w-6 h-6" />
             </Button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -54,32 +85,18 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
-        <div className="absolute top-4 left-4 z-20">
-          <span className="inline-block px-3 py-1 bg-white/10 backdrop-blur-md text-white text-sm font-medium rounded-full border border-white/20">
-            New
-          </span>
-        </div>
       </div>
       
-      <div className="p-8">
-        <div className="flex items-center mb-4">
-          <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-3">
-            {product.icon}
-          </div>
-          <h3 className="text-xl font-bold text-white group-hover:text-white/90 transition-colors">
-            {product.name}
-          </h3>
-        </div>
-        
-        <p className="text-white/70 leading-relaxed mb-6 line-clamp-3">
+      <div className="p-8">     
+        <p className="text-white/70 leading-relaxed mb-6">
           {product.description}
         </p>
         
-        <Link to="/shop">
+        {/* <Link to="/shop">
           <Button className="bg-white/10 text-white border border-white/20 hover:bg-white hover:text-black w-full py-3 rounded-xl transition-all duration-300">
             Learn More
           </Button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
@@ -88,20 +105,20 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
 const newArrivals = [
   {
     name: "K2 Contrast Hot/Cold Plunge",
-    description: "Luxury dual-zone hydrotherapy system featuring both hot tub and cold plunge in one elegant unit. Advanced LED lighting, premium materials, and precise temperature control.",
-    image: "/lovable-uploads/53a979fd-0494-4fb3-9569-612c85f5d66f.png",
+    description: "Women, Peace & Security'(WPS)Global Agenda, Gandhian values ofSatyagraha & Women LeadingNon-Violent Societies.Focus: ACall-to-Action for the GlobalPeace Economics Crisis -PeriodEquity.",
+    image: "/lovable-uploads/peace.png",
     icon: <Thermometer className="w-5 h-5 text-white" />
   },
   {
     name: "The AirVault (2.0 Hyperbaric Chamber)",
-    description: "Wheelchair-accessible hyperbaric chamber room with full 2.0 ATA capabilities. Features built-in mini split, comfortable seating, and spacious design.",
-    image: "/lovable-uploads/50cfb7d6-f74f-49fc-abbf-6f9008906631.png",
+    description: "Women, Peace & Security'(WPS)Global Agenda, Gandhian values ofSatyagraha & Women LeadingNon-Violent Societies.Focus: ACall-to-Action for the GlobalPeace Economics Crisis -PeriodEquity.",
+    image: "/lovable-uploads/peace.png",
     icon: <Cylinder className="w-5 h-5 text-white" />
   },
   {
     name: "HydroChill",
-    description: "Revolutionary dry float technology that delivers the benefits of float therapy or cold plunge without getting wet. Innovative recovery and rejuvenation system.",
-    image: "/lovable-uploads/2316cae8-0672-4529-962b-5d4ba13e7e29.png", 
+    description: "Women, Peace & Security'(WPS)Global Agenda, Gandhian values ofSatyagraha & Women LeadingNon-Violent Societies.Focus: ACall-to-Action for the GlobalPeace Economics Crisis -PeriodEquity.",
+    image: "/lovable-uploads/peace.png", 
     icon: <Bath className="w-5 h-5 text-white" />
   }
 ];
