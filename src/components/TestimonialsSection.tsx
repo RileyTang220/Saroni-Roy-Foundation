@@ -11,10 +11,10 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
-            Get Involved
+            Collaborate
           </h2>
           <p className="text-2xl text-white/80">
-            Collaborate with governments, NGOs, and private sectors to advocate for universal access to menstrual products and WASH infrastructure.
+            Let us make a better world together.
           </p>
         </div>
 
@@ -43,9 +43,9 @@ const TestimonialsSection = () => {
         <div className="text-center mt-12" >
           <Link to="/">
             <Button className="bg-yellow-500 text-black hover:bg-yellow-500/90
-                 px-12 py-6 rounded-full text-xl font-semibold
-                 flex items-center gap-4 mx-auto shadow-lg transition">
-              Donate
+            px-12 py-6 rounded-full text-xl font-semibold
+            flex items-center gap-4 mx-auto shadow-lg transition">
+              Join Us
               <ArrowRight className="w-6 h-6" />
             </Button>
           </Link>
@@ -58,19 +58,19 @@ const TestimonialsSection = () => {
 
 const involveItems = [
   {
-    title: "Policy Engagement",
+    title: "Volunteer",
     body:
-      "Collaborate with governments, NGOs, and private sectors to advocate for universal access to menstrual products and WASH infrastructure",
+      "Passionate about making an on-ground impact? Click here to join our team at the Saroni Roy Foundation and conduct menstrual hygiene workshops while spreading awareness!",
   },
   {
-    title: "Community Outreach",
+    title: "Career",
     body:
-      "Design initiatives addressing the unique needs of vulnerable groups, including transgender menstruators and Indigenous communities",
+      "Passionate about driving change in menstrual hygiene management? If the thought of transforming the world excites you, explore our open positions today.",
   },
   {
-    title: "Partnership Support",
+    title: "Partner",
     body:
-      "Advocate for funding, sponsorship and partnership support to enable accelerated participation in sports, aviation, business and more",
+      "We value the power of collaboration across all ideas and campaigns — welcoming both individuals and organizations alike.",
   },
 ];
 
