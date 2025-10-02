@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NavLink, Link } from "react-router-dom";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import { FaImdb } from "react-icons/fa";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -37,14 +39,14 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-black border-b border-white/10 backdrop-blur-md">
-      <div className="container mx-auto flex items-center justify-between h-20 px-4">
+      <div className="container mx-auto flex items-center justify-between h-30 px-8">
         <div className="flex items-center space-x-3">
           {/* Updated logo - clickable to go home */}
           <Link to="/">
             <img 
-              src="/lovable-uploads/Black-Gold.png" 
-              alt="SuperNaari Logo" 
-              className="h-24 w-24 object-contain hover:opacity-80 transition-opacity cursor-pointer"
+              src="/lovable-uploads/SRFlogo.png" 
+              alt="SRF Logo" 
+              className="h-[90px] md:h-[90px] w-auto object-contain hover:opacity-80 transition-opacity cursor-pointer"
             />
           </Link>
         </div>
@@ -58,9 +60,9 @@ const Navbar = () => {
               scrollToSection('home');
               setActive('home');
             }}
-            className={`font-semibold transition-colors relative
+            className={`font-semibold text-lg lg:text-xl transition-colors relative
               ${active === 'home'
-                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
+                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-10 after:bg-[#c9a300] after:rounded'
                 : 'text-white/80 hover:text-white'}`}
           >
             Home
@@ -73,9 +75,9 @@ const Navbar = () => {
               scrollToSection('vision');
               setActive('vision');
             }}
-            className={`font-semibold transition-colors relative
+            className={`font-semibold text-lg lg:text-xl transition-colors relative
               ${active === 'vision'
-                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
+                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-10 after:bg-[#c9a300] after:rounded'
                 : 'text-white/80 hover:text-white'}`}
           >
             Vision
@@ -88,9 +90,9 @@ const Navbar = () => {
               scrollToSection('platform');
               setActive('platform');
             }}
-            className={`font-semibold transition-colors relative
+            className={`font-semibold text-lg lg:text-xl transition-colors relative
               ${active === 'platform'
-                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
+                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-10 after:bg-[#c9a300] after:rounded'
                 : 'text-white/80 hover:text-white'}`}
           >
             Platform
@@ -103,9 +105,9 @@ const Navbar = () => {
               scrollToSection('news');
               setActive('news');
             }}
-            className={`font-semibold transition-colors relative
+            className={`font-semibold text-lg lg:text-xl transition-colors relative
               ${active === 'news'
-                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
+                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-10 after:bg-[#c9a300] after:rounded'
                 : 'text-white/80 hover:text-white'}`}
           >
             News
@@ -118,9 +120,9 @@ const Navbar = () => {
               scrollToSection('involve');
               setActive('involve');
             }}
-            className={`font-semibold transition-colors relative
+            className={`font-semibold text-lg lg:text-xl transition-colors relative
               ${active === 'involve'
-                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-1 after:h-1 after:w-8 after:bg-[#c9a300] after:rounded'
+                ? 'text-[#c9a300] after:content-[""] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-10 after:bg-[#c9a300] after:rounded'
                 : 'text-white/80 hover:text-white'}`}
           >
             Involve
@@ -131,11 +133,36 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Button 
             type="button"
-            onClick={() => {}}
-            className="bg-[#c9a300] text-black hover:bg-white/90 rounded-full px-6"
+            onClick={() => window.open("https://www.linkedin.com/newsletters/7317904143652663296/?displayConfirmation=true", "_blank")}
+            className="bg-[#c9a300] text-black hover:bg-white/90 text-lg lg:text-xl rounded-full px-6"
           >
-            Download Brochure
+            Subscribe
           </Button>
+        </div>
+
+        {/* Social Media */}
+        <div className="flex space-x-4">
+          <a href="https://www.facebook.com/saroni.roy" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
+            <Facebook size={28} />
+          </a>          
+          <a href="https://www.instagram.com/saroroy/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Instagram">   
+            <Instagram size={28} />     
+          </a>     
+          <a href="https://x.com/roysaroni" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Twitter">
+                        <Twitter size={28} />  
+          </a>    
+          <a href="https://www.linkedin.com/in/saroniroy/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="LinkedIn">
+                        <Linkedin size={28} />
+          </a>
+          <a 
+            href="https://imdb.me/SaroniRoy" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-white/70 hover:text-white transition-colors" 
+            aria-label="IMDb"
+          >
+            <FaImdb size={28} />
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
