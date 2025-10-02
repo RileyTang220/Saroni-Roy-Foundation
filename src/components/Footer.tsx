@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FaImdb } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -14,21 +15,29 @@ const Footer = () => {
               Connect With us on
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.instagram.com/restrecoverywellness/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
-                <Facebook size={20} />
-              </a>
-              <a href="https://www.instagram.com/restrecoverywellness/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-              <a href="https://www.instagram.com/restrecoverywellness/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Twitter">
-                <Twitter size={20} />
-              </a>
-              <a href="https://www.instagram.com/restrecoverywellness/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="LinkedIn">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://www.instagram.com/restrecoverywellness/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="YouTube">
-                <Youtube size={20} />
-              </a>
+              <div className="flex space-x-4">
+                <a href="https://www.facebook.com/saroni.roy" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Facebook">
+                  <Facebook size={20} />
+                </a>          
+                <a href="https://www.instagram.com/saroroy/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Instagram">   
+                  <Instagram size={20} />     
+                </a>     
+                <a href="https://x.com/roysaroni" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="Twitter">
+                  <Twitter size={20} />  
+                </a>    
+                <a href="https://www.linkedin.com/in/saroniroy/" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors" aria-label="LinkedIn">
+                  <Linkedin size={20} />
+                </a>
+                <a 
+                  href="https://imdb.me/SaroniRoy" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-white/70 hover:text-white transition-colors" 
+                  aria-label="IMDb"
+                >
+                  <FaImdb size={20} />
+                </a>
+              </div>
             </div>
           </div>
           

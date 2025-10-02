@@ -19,7 +19,7 @@ const NewArrivalsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight leading-tight">
-            News
+            Featured Projects
           </h2>
         </div>
 
@@ -32,7 +32,7 @@ const NewArrivalsSection = () => {
           </div>
 
           {/* Left Arrow */}
-          <Button
+          {/* <Button
             aria-label="Previous"
             onClick={() => scrollByViewport("left")}
             className="hidden md:flex items-center justify-center
@@ -42,10 +42,10 @@ const NewArrivalsSection = () => {
             variant="ghost"
           >
             <ChevronLeft className="h-6 w-6" />
-          </Button>
+          </Button> */}
 
           {/* Right Arrow */}
-          <Button
+          {/* <Button
             aria-label="Next"
             onClick={() => scrollByViewport("right")}
             className="hidden md:flex items-center justify-center
@@ -55,7 +55,7 @@ const NewArrivalsSection = () => {
             variant="ghost"
           >
             <ChevronRight className="h-6 w-6" />
-          </Button>
+          </Button> */}
         </div>
 
         
@@ -105,20 +105,20 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
 const newArrivals = [
   {
     name: "K2 Contrast Hot/Cold Plunge",
-    description: "Women, Peace & Security'(WPS)Global Agenda, Gandhian values ofSatyagraha & Women LeadingNon-Violent Societies.Focus: ACall-to-Action for the GlobalPeace Economics Crisis -PeriodEquity.",
-    image: "/lovable-uploads/peace.png",
+    description: "A description of this picture.",
+    image: "/lovable-uploads/photo1.jpg",
     icon: <Thermometer className="w-5 h-5 text-white" />
   },
   {
     name: "The AirVault (2.0 Hyperbaric Chamber)",
-    description: "Women, Peace & Security'(WPS)Global Agenda, Gandhian values ofSatyagraha & Women LeadingNon-Violent Societies.Focus: ACall-to-Action for the GlobalPeace Economics Crisis -PeriodEquity.",
-    image: "/lovable-uploads/peace.png",
+    description: "A description of this picture.",
+    image: "/lovable-uploads/photo2.jpg",
     icon: <Cylinder className="w-5 h-5 text-white" />
   },
   {
     name: "HydroChill",
-    description: "Women, Peace & Security'(WPS)Global Agenda, Gandhian values ofSatyagraha & Women LeadingNon-Violent Societies.Focus: ACall-to-Action for the GlobalPeace Economics Crisis -PeriodEquity.",
-    image: "/lovable-uploads/peace.png", 
+    description: "A description of this picture.",
+    image: "/lovable-uploads/photo3.jpg", 
     icon: <Bath className="w-5 h-5 text-white" />
   }
 ];
