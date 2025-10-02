@@ -23,7 +23,14 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black overflow-hidden"
+    // style={{
+    // backgroundImage: "url('/lovable-uploads/Girls.png')",
+    // backgroundRepeat: "no-repeat",
+    // backgroundPosition: "center",
+    // backgroundSize: "contain",
+    //   }}
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse" />
@@ -45,9 +52,13 @@ const HeroSection = () => {
             </div> */}
 
             {/* Main Headline */}
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
-                Super Naari
+            <div className="space-y-2">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-none">
+                <img
+                  src="/lovable-uploads/Black-Gold.png"
+                  alt="Super Naari Logo"
+                  className="block h-[200px] md:h-[260px] lg:h-[320px] w-auto"
+                />
                 <span className="block mt-1 text-xl md:text-5xl lg:text-6xl font-semibold leading-snug bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
                   A Period Equity Initiative
                 </span>
@@ -58,7 +69,8 @@ const HeroSection = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
               {/* Primary */}
               <Button
                 size="lg"
@@ -82,6 +94,31 @@ const HeroSection = () => {
                 Watch Introduction
                 <Play className="ml-2 w-5 h-5" />
               </Button>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+              {/* Donate button */}
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300
+               text-black font-semibold px-8 py-4 text-lg group"
+               onClick={() => scrollToSection('/')}
+               >
+                Donate
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+
+              {/* Subscribe button */}
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300
+               text-black font-semibold px-8 py-4 text-lg group"
+               onClick={() => scrollToSection('/')}
+               >
+                Download E-book
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              </div>
             </div>
 
             {/* Social Proof Stats */}
@@ -102,7 +139,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Logo & Features */}
-          <div className={`space-y-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+          {/* <div className={`space-y-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}> */}
             {/* Enhanced Logo Display */}
             <div className="relative group">
               <div className="absolute -inset-8 bg-gradient-to-r from-yellow-500/20 to-white/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700" />
@@ -138,7 +175,7 @@ const HeroSection = () => {
                 <div className="text-xs text-white/70">Customer Satisfaction</div>
               </div>
             </div> */}
-          </div>
+          {/* </div> */}
         </div>
       </div>
 

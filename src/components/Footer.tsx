@@ -80,7 +80,10 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/10 mt-12 pt-8 text-center">
+        <div className="border-t border-white/10 mt-12 pt-8 text-center space-y-4">
+          <p className="text-white/70 max-w-5xl mx-auto leading-relaxed">
+            We acknowledge the Traditional Owners of Country throughout Australia and recognise their continuing connection to lands, waters and communities. We pay our respects to Aboriginal and Torres Strait Islander cultures and Elders past and present.
+          </p>
           <p className="text-white/70">
             &copy; {new Date().getFullYear()} Saroni Roy Foundation. All rights reserved.
           </p>
