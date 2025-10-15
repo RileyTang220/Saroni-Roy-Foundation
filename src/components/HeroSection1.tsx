@@ -38,7 +38,7 @@ const HeroSection = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex justify-between items-center w-full mt-60 px-8">
+        <div className="flex justify-between items-center w-full mt-40 px-8">
           <div className="flex gap-4">
             <Button className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold px-6 py-6 rounded-md shadow-md" onClick={() => scrollToSection('vision')}>
               Explore Platform

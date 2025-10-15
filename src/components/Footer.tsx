@@ -3,8 +3,85 @@ import { Input } from "@/components/ui/input";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FaImdb } from "react-icons/fa";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { newsletterService } from "@/lib/supabase";
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.firstName || !formData.lastName || !formData.email) {
+      toast({
+        title: "Please fill in all fields",
+        description: "Please make sure to fill in your name and email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Check if email already exists
+      const emailExists = await newsletterService.checkEmailExists(formData.email);
+      
+      if (emailExists) {
+        toast({
+          title: "Email already exists",
+          description: "This email address has already subscribed to our newsletter.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Add new subscriber to Supabase
+      await newsletterService.addSubscriber({
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email: formData.email,
+      });
+      
+      toast({
+        title: "Subscription successful!",
+        description: "Thank you for subscribing! We'll be in touch soon.",
+      });
+
+      // Clear form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: ''
+      });
+
+    } catch (error) {
+      console.error('Storage error:', error);
+      toast({
+        title: "Subscription failed",
+        description: error instanceof Error ? error.message : "Please try again later or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="bg-black border-t border-white/10">
       <div className="container mx-auto px-4 py-16">
@@ -66,24 +143,41 @@ const Footer = () => {
           
           <div className="w-full max-w-[420px] mx-auto">
             <h3 className="text-xl font-bold mb-6 text-white tracking-tight">Subscribe for our newsletter.</h3>
-            <form className="flex flex-col space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
               <Input
-                type="email"
+                type="text"
+                name="firstName"
                 placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleInputChange}
                 className="bg-white/5 border-white/10 placeholder:text-white/50 text-white"
+                required
               />
               <Input
-                type="email"
+                type="text"
+                name="lastName"
                 placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleInputChange}
                 className="bg-white/5 border-white/10 placeholder:text-white/50 text-white"
+                required
               />
               <Input
                 type="email"
+                name="email"
                 placeholder="Your email"
+                value={formData.email}
+                onChange={handleInputChange}
                 className="bg-white/5 border-white/10 placeholder:text-white/50 text-white"
+                required
               />
-              <Button variant="secondary" className="bg-white text-black hover:bg-white/90 rounded-full">
-                Subscribe
+              <Button 
+                type="submit"
+                variant="secondary" 
+                className="bg-white text-black hover:bg-white/90 rounded-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>
             </form>
           </div>
