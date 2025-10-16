@@ -23,33 +23,60 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="flex flex-col items-center space-between text-center px-6 pt-12 pb-4 min-h-screen">
+    <section id="home" className="flex flex-col items-center text-center text-center px-6 pt-12 pb-4 min-h-screen">
         <div className="p-2 rounded-xl">
-          <img src="../../public/lovable-uploads/midlogo.png" alt="" className="h-60 object-contain" />
+        <img src="/lovable-uploads/midlogo.png" alt="Super Naari"
+          className="mx-auto w-auto
+             h-[120px] sm:h-[150px] md:h-[170px]
+             lg:h-[120px] xl:h-[130px] 2xl:h-[140px]
+             object-contain" />
         </div>
 
-        <h3 className="text-4xl md:text-4xl font-bold text-yellow-400 p-3 rounded-md">
-          A Period Equity Initiative
-        </h3>
+      <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold
+               text-yellow-400 leading-tight tracking-tight
+               drop-shadow-[0_2px_6px_rgba(0,0,0,.45)]
+               pb-1 md:pb-2 text-center">
+        A Period Equity Initiative
+      </h3>
 
-        <p className="text-center max-w-xl mt-4 text-lg text-gray-200 italic p-3 rounded-lg">
-          “Building a digital ecosystem for menstrual health, bridging ancient
-          wisdom with modern healthcare”
-        </p>
-
+      <p className="text-center max-w-xl md:max-w-2xl mt-1
+              text-lg md:text-xl lg:text-2xl
+              text-gray-100/90
+              leading-snug">
+        “Building a digital ecosystem for menstrual health, bridging ancient
+        wisdom with modern healthcare”
+      </p>
+        
         {/* Buttons */}
-        <div className="flex justify-between items-center w-full mt-40 px-8">
-          <div className="flex gap-4">
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold px-6 py-6 rounded-md shadow-md" onClick={() => scrollToSection('vision')}>
+        <div className="mt-auto w-full px-4
+                pb-8 md:pb-10 lg:pb-16
+                flex flex-wrap gap-4 md:gap-5 lg:gap-6 justify-center lg:justify-between items-center">
+          <div className="flex flex-wrap gap-4 md:gap-5 lg:gap-6 justify-center">
+            <Button className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold
+            rounded-md lg:rounded-lg xl:rounded-xl shadow-md
+            px-6 py-6 text-base
+            md:px-6 md:py-6 md:text-[17px]
+            lg:px-8 lg:py-8 lg:text-xl
+            xl:px-10 xl:py-9 xl:text-2xl" onClick={() => scrollToSection('vision')}>
               Explore Platform
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
-            <Button onClick={() => scrollToSection('intro')} className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold px-6 py-6 rounded-md shadow-md">
+            <Button onClick={() => scrollToSection('intro')} className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold
+            rounded-md lg:rounded-lg xl:rounded-xl shadow-md
+            px-6 py-6 text-base
+            md:px-6 md:py-6 md:text-[17px]
+            lg:px-8 lg:py-8 lg:text-xl
+            xl:px-10 xl:py-9 xl:text-2xl">
               Watch Introduction
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
-          <Button onClick={() => scrollToSection('/')} className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold px-6 py-6 rounded-md shadow-md">
+          <Button onClick={() => scrollToSection('/')} className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold
+            rounded-md lg:rounded-lg xl:rounded-xl shadow-md
+            px-6 py-6 text-base
+            md:px-6 md:py-6 md:text-[17px]
+            lg:px-8 lg:py-8 lg:text-xl
+            xl:px-10 xl:py-9 xl:text-2xl">
             Download E-book
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
           </Button>
