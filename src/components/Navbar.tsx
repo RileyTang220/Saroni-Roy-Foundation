@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-black border-b border-white/10 backdrop-blur-md">
+    <header className="sticky top-0 z-50 backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between h-30 px-8">
         <div className="flex items-center space-x-3">
           {/* Updated logo - clickable to go home */}
@@ -130,7 +130,7 @@ const Navbar = () => {
         </nav>
 
         {/* Desktop Button */}
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <Button 
             type="button"
             onClick={() => window.open("https://www.linkedin.com/newsletters/7317904143652663296/?displayConfirmation=true", "_blank")}
@@ -138,7 +138,7 @@ const Navbar = () => {
           >
             Subscribe
           </Button>
-        </div>
+        </div> */}
 
         {/* Social Media */}
         <div className="flex space-x-4">
