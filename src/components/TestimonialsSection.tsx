@@ -25,12 +25,21 @@ const TestimonialsSection = () => {
               className="bg-zinc-800/60 border-white/10 hover:border-white/20 transition-all rounded-2xl"
             >
               <CardContent className="p-8">
+                {/* Image on top */}
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="mx-auto mb-6 w-32 h-32 md:w-40 md:h-40 object-contain drop-shadow-lg"
+                  loading="lazy"
+                  draggable={false}
+                />
+
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-white tracking-tight">
+                <h3 className="text-2xl font-bold text-white tracking-tight text-center">
                   {item.title}
                 </h3>
                 {/* Divider */}
-                <div className="mt-2 h-px w-14 bg-white/40" />
+                <div className="mt-2 h-px w-14 bg-white/40 mx-auto" />
                 {/* Body */}
                 <p className="mt-6 text-white/80 leading-relaxed">
                   {item.body}
@@ -61,16 +70,19 @@ const involveItems = [
     title: "Volunteer",
     body:
       "Passionate about making an on-ground impact? Click here to join our team at the Saroni Roy Foundation and conduct menstrual hygiene workshops while spreading awareness!",
+    img: "/lovable-uploads/people.png",
   },
   {
     title: "Career",
     body:
       "Passionate about driving change in menstrual hygiene management? If the thought of transforming the world excites you, explore our open positions today.",
+    img: "/lovable-uploads/bag.png",
   },
   {
     title: "Partner",
     body:
       "We value the power of collaboration across all ideas and campaigns — welcoming both individuals and organizations alike.",
+    img: "/lovable-uploads/hand.png",
   },
 ];
 
