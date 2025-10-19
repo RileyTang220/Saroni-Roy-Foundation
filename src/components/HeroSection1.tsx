@@ -32,12 +32,12 @@ const HeroSection = () => {
              object-contain" />
         </div>
 
-      <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold
+      {/* <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold
                text-yellow-400 leading-tight tracking-tight
                drop-shadow-[0_2px_6px_rgba(0,0,0,.45)]
                pb-1 md:pb-2 text-center">
         A Period Equity Initiative
-      </h3>
+      </h3> */}
 
       <p className="text-center max-w-xl md:max-w-2xl mt-1
               text-lg md:text-xl lg:text-2xl
