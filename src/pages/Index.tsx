@@ -1,4 +1,5 @@
 
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection1";
 import StorySection from "@/components/StorySection";
@@ -10,6 +11,39 @@ import Footer from "@/components/Footer";
 import FullScreenCarousel from "@/components/FullScreenCarousel";
 
 const Index = () => {
+  const [showCarouselControls, setShowCarouselControls] = useState(true);
+
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
+    const handleScroll = () => {
+      // Debounce the scroll event handling
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const heroSection = document.getElementById('home');
+        if (heroSection) {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          // show controls only when in hero section
+          setShowCarouselControls(scrollTop < (300));
+        }
+      }, 10);
+    };
+
+    // setup scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // initial check
+    handleScroll();
+
+    // cleanup listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen">
       {/* full screen carousel background */}
@@ -18,7 +52,10 @@ const Index = () => {
       </div>
       
       {/* carousel control buttons - independent layer */}
-      <div className="fixed inset-0 z-50 pointer-events-none">
+      <div className={`fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 ${
+        showCarouselControls ? 'opacity-100' : 'opacity-0'
+      }`}>
+        {/* left arrow */}
         <div className="absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-auto">
           <button
             onClick={() => {
@@ -36,7 +73,8 @@ const Index = () => {
             </svg>
           </button>
         </div>
-        
+
+        {/* right arrow */}
         <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-auto">
           <button
             onClick={() => {
@@ -54,7 +92,8 @@ const Index = () => {
             </svg>
           </button>
         </div>
-        
+
+        {/* bottom indicators */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 pointer-events-auto">
           <button
             onClick={() => {
